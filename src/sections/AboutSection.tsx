@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import { FadeIn } from '../components/FadeIn';
 import { AnimatedText } from '../components/AnimatedText';
 import { ContactButton } from '../components/ContactButton';
+import { ContactModal } from '../components/ContactModal';
 
 const aboutText =
-  "With more than five years of experience in design, i focus on branding, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let's build something incredible together!";
+  "A passionate software engineering student with a strong focus on web development and building modern, responsive applications. I enjoy turning ideas into clean, functional code and I'm always eager to learn new technologies. Let's create something awesome together!";
 
 export function AboutSection() {
+  const [contactOpen, setContactOpen] = useState(false);
   return (
     <section className="relative min-h-screen px-5 sm:px-8 md:px-10 py-20 flex flex-col items-center justify-center overflow-hidden">
       <FadeIn delay={0.1} x={-80} y={0} duration={0.9} className="absolute top-[4%] left-[1%] sm:left-[2%] md:left-[4%]">
@@ -58,8 +61,9 @@ export function AboutSection() {
       </div>
 
       <div className="mt-16 sm:mt-20 md:mt-24">
-        <ContactButton />
+        <ContactButton onClick={() => setContactOpen(true)} />
       </div>
+      <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
     </section>
   );
 }

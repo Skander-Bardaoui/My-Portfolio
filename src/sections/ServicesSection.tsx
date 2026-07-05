@@ -1,30 +1,55 @@
 import { FadeIn } from '../components/FadeIn';
 
-const services = [
+const frameworks = [
   {
-    num: '01',
-    name: '3D Modeling',
-    desc: 'Creation of detailed objects, characters, or environments tailored to specific client needs, ideal for games, products, and visualizations.',
+    name: 'Angular',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg',
+    desc: 'Front-end framework for building dynamic single-page applications with TypeScript.',
   },
   {
-    num: '02',
-    name: 'Rendering',
-    desc: 'High-quality, photorealistic renders that showcase designs with custom lighting, textures, and materials to bring concepts to life.',
+    name: 'React',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    desc: 'JavaScript library for building interactive user interfaces and component-based UIs.',
   },
   {
-    num: '03',
-    name: 'Motion Design',
-    desc: 'Dynamic animations and motion graphics that add energy and storytelling to brands, products, and digital experiences.',
+    name: 'NestJS',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg',
+    desc: 'Progressive Node.js framework for building efficient and scalable server-side applications.',
   },
   {
-    num: '04',
-    name: 'Branding',
-    desc: 'Crafting cohesive visual identities — from logos to full brand systems — that communicate a clear and memorable presence.',
+    name: 'Spring Boot',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg',
+    desc: 'Java-based framework for creating production-grade microservices and web applications.',
   },
   {
-    num: '05',
-    name: 'Web Design',
-    desc: 'Designing clean, modern, and conversion-focused websites with attention to layout, typography, and user experience.',
+    name: 'Laravel',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg',
+    desc: 'PHP framework with elegant syntax for crafting modern and robust web applications.',
+  },
+  {
+    name: 'Symfony',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/symfony/symfony-original.svg',
+    desc: 'High-performance PHP framework following MVC pattern for scalable enterprise projects.',
+  },
+  {
+    name: 'Figma',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
+    desc: 'Cloud-based design tool for collaborative UI/UX design and prototyping.',
+  },
+  {
+    name: 'Metabase',
+    logo: 'https://raw.githubusercontent.com/get-icon/geticon/master/icons/metabase.svg',
+    desc: 'Open-source business intelligence tool for easy data exploration and visualization.',
+  },
+  {
+    name: 'Power BI',
+    logo: 'https://raw.githubusercontent.com/microsoft/PowerBI-Icons/master/SVG/Power-BI.svg',
+    desc: 'Business analytics tool for visualizing data and sharing actionable insights across teams.',
+  },
+  {
+    name: 'Databases',
+    logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+    desc: 'SQL (MySQL, PostgreSQL) and NoSQL (MongoDB) databases for structured and flexible data storage.',
   },
 ];
 
@@ -35,24 +60,23 @@ export function ServicesSection() {
         className="text-[#0C0C0C] font-black uppercase text-center mb-16 sm:mb-20 md:mb-28"
         style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
       >
-        Services
+        Technologies
       </h2>
 
       <div className="max-w-5xl mx-auto flex flex-col">
-        {services.map((item, i) => (
-          <FadeIn key={item.num} delay={i * 0.1} y={20}>
+        {frameworks.map((item, i) => (
+          <FadeIn key={item.name} delay={i * 0.08} y={20}>
             <div
-              className={`flex items-start gap-4 sm:gap-6 md:gap-8 py-8 sm:py-10 md:py-12 ${
-                i < services.length - 1 ? 'border-b border-[rgba(12,12,12,0.15)]' : ''
+              className={`flex items-center gap-4 sm:gap-6 md:gap-8 py-6 sm:py-8 md:py-10 ${
+                i < frameworks.length - 1 ? 'border-b border-[rgba(12,12,12,0.15)]' : ''
               }`}
             >
-              <span
-                className="font-black text-[#0C0C0C] leading-none shrink-0"
-                style={{ fontSize: 'clamp(3rem, 10vw, 140px)' }}
-              >
-                {item.num}
-              </span>
-              <div className="flex flex-col justify-center pt-1 sm:pt-2">
+              <img
+                src={item.logo}
+                alt={item.name}
+                className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 shrink-0 object-contain"
+              />
+              <div className="flex flex-col justify-center">
                 <h3
                   className="font-medium uppercase text-[#0C0C0C]"
                   style={{ fontSize: 'clamp(1rem, 2.2vw, 2.1rem)' }}
