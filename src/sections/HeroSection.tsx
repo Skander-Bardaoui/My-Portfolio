@@ -15,13 +15,13 @@ export function HeroSection() {
   const [contactOpen, setContactOpen] = useState(false);
   return (
     <section className="h-screen flex flex-col relative overflow-x-clip">
-      <FadeIn as="nav" delay={0} y={-20} className="flex justify-between px-6 md:px-10 pt-6 md:pt-8">
+      <FadeIn as="nav" delay={0} y={-20} className="flex justify-between gap-2 sm:gap-4 px-4 sm:px-6 md:px-10 pt-4 sm:pt-6 md:pt-8">
         {navLinks.map((link) => (
           <a
             key={link.label}
             href={link.href}
             onClick={link.label === 'Contact' ? (e) => { e.preventDefault(); setContactOpen(true); } : undefined}
-            className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200"
+            className="text-[#D7E2EA] font-medium uppercase tracking-wider text-xs sm:text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200"
           >
             {link.label}
           </a>
@@ -34,6 +34,14 @@ export function HeroSection() {
             <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[10vw] sm:text-[11vw] md:text-[12vw] lg:text-[13vw]">
               Hi,&nbsp;i&apos;m&nbsp;Skander
             </h1>
+          </FadeIn>
+        </div>
+
+        <div className="sm:hidden flex-1 flex items-center justify-center">
+          <FadeIn delay={0.6} y={30}>
+            <Magnet padding={150} strength={3} activeTransition="transform 0.3s ease-out" inactiveTransition="transform 0.6s ease-in-out">
+              <img src="/avatar.png" alt="Jack portrait" className="w-[200px]" />
+            </Magnet>
           </FadeIn>
         </div>
 
@@ -50,19 +58,17 @@ export function HeroSection() {
       </div>
       <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
 
-      <FadeIn
-        delay={0.6}
-        y={30}
-        className="absolute left-1/3 -translate-x-[55%] z-10 bottom-0"
-      >
-        <Magnet padding={150} strength={3} activeTransition="transform 0.3s ease-out" inactiveTransition="transform 0.6s ease-in-out">
-          <img
-            src="/avatar.png"
-            alt="Jack portrait"
-            className="w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px]"
-          />
-        </Magnet>
-      </FadeIn>
+      <div className="hidden sm:block absolute left-1/2 -translate-x-[55%] z-10 bottom-0">
+        <FadeIn delay={0.6} y={30}>
+          <Magnet padding={150} strength={3} activeTransition="transform 0.3s ease-out" inactiveTransition="transform 0.6s ease-in-out">
+            <img
+              src="/avatar.png"
+              alt="Jack portrait"
+              className="w-[360px] md:w-[440px] lg:w-[520px]"
+            />
+          </Magnet>
+        </FadeIn>
+      </div>
     </section>
   );
 }

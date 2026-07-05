@@ -60,7 +60,6 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
               <p className="text-green-400 text-center text-lg font-medium">Message sent!</p>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                <input type="hidden" name="_cc" value="skander.bardaoui@esprit.tn" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_subject" value="New message from your portfolio" />
                 <div>

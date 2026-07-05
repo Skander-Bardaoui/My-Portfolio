@@ -103,7 +103,7 @@ function ProjectCard({ project, index, total }: { project: Project; index: numbe
             <div className="flex items-start gap-3 sm:gap-4 md:gap-6">
               <span
                 className="font-black leading-none text-[#D7E2EA]"
-                style={{ fontSize: 'clamp(3rem, 10vw, 140px)' }}
+                style={{ fontSize: 'clamp(2.2rem, 10vw, 140px)' }}
               >
                 {project.num}
               </span>
@@ -121,7 +121,7 @@ function ProjectCard({ project, index, total }: { project: Project; index: numbe
             </div>
             <button
               onClick={() => setShowDetails(true)}
-              className="rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 text-sm sm:text-base hover:bg-[#D7E2EA]/10 transition-colors duration-200"
+              className="rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest px-4 py-2 sm:px-10 sm:py-3.5 text-xs sm:text-base hover:bg-[#D7E2EA]/10 transition-colors duration-200"
             >
               Details
             </button>
@@ -129,7 +129,7 @@ function ProjectCard({ project, index, total }: { project: Project; index: numbe
 
           <div
             className="w-full overflow-hidden rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
-            style={{ height: 'clamp(380px, 55vh, 640px)' }}
+            style={{ height: 'clamp(280px, 50vh, 640px)' }}
           >
             <img
               src={project.col2img}
