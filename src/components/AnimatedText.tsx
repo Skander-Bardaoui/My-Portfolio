@@ -13,8 +13,7 @@ function AnimatedChar({
   scrollYProgress: ReturnType<typeof useScroll>['scrollYProgress'];
 }) {
   const start = index / total;
-  const end = (index + 1) / total;
-  const opacity = useTransform(scrollYProgress, [start, end], [0.2, 1]);
+  const opacity = useTransform(scrollYProgress, [start, start + 0.08], [0.2, 1]);
 
   return (
     <motion.span style={{ opacity }}>
@@ -33,7 +32,7 @@ export function AnimatedText({ text, className = '', style }: AnimatedTextProps)
   const ref = useRef<HTMLParagraphElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start 0.4', 'end 0.6'],
+    offset: ['start 0.95', 'end 0.30'],
   });
 
   return (

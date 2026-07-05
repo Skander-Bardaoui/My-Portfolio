@@ -4,7 +4,12 @@ import { Magnet } from '../components/Magnet';
 import { ContactButton } from '../components/ContactButton';
 import { ContactModal } from '../components/ContactModal';
 
-const navLinks = ['About', 'Price', 'Projects', 'Contact'];
+const navLinks = [
+  { label: 'About', href: '#about' },
+  { label: 'Technologie', href: '#technologie' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
+];
 
 export function HeroSection() {
   const [contactOpen, setContactOpen] = useState(false);
@@ -13,11 +18,12 @@ export function HeroSection() {
       <FadeIn as="nav" delay={0} y={-20} className="flex justify-between px-6 md:px-10 pt-6 md:pt-8">
         {navLinks.map((link) => (
           <a
-            key={link}
-            href="#"
+            key={link.label}
+            href={link.href}
+            onClick={link.label === 'Contact' ? (e) => { e.preventDefault(); setContactOpen(true); } : undefined}
             className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200"
           >
-            {link}
+            {link.label}
           </a>
         ))}
       </FadeIn>
@@ -47,7 +53,7 @@ export function HeroSection() {
       <FadeIn
         delay={0.6}
         y={30}
-        className="absolute left-1/2 -translate-x-[55%] z-10 bottom-0"
+        className="absolute left-1/3 -translate-x-[55%] z-10 bottom-0"
       >
         <Magnet padding={150} strength={3} activeTransition="transform 0.3s ease-out" inactiveTransition="transform 0.6s ease-in-out">
           <img

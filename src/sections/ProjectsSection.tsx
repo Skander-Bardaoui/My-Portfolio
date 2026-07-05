@@ -8,6 +8,7 @@ interface Project {
   category: string;
   col1img1: string;
   col1img2: string;
+  col1img3: string;
   col2img: string;
   details: string;
 }
@@ -19,6 +20,7 @@ const projects: Project[] = [
     category: 'Esprit',
     col1img1: '/projet 1/projet1.2.png',
     col1img2: '',
+    col1img3: '',
     col2img: '/projet 1/projet1.png',
     details: `urbanlink-symfony.onrender.com  |  Academic Project  |  January 2025 - May 2025
 
@@ -33,27 +35,45 @@ github.com/AchRef864/UrbanLinkSymfony.git`,
   },
   {
     num: '02',
-    name: 'Aura Brand Identity',
-    category: 'Personal',
-    col1img1:
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055654_911201c5-36d9-4bc6-bac7-331adfce159f.png&w=1280&q=85',
-    col1img2:
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055723_5ceda0b8-d9c2-4665-b2e3-83ba19ba76d1.png&w=1280&q=85',
-    col2img:
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055753_adc5dcbd-a8e6-49c0-b43a-9b030d835cea.png&w=1280&q=85',
-    details: '',
+    name: 'NovaEntra',
+    category: 'SaaS',
+    col1img1: '/projet2/projet2.2.png',
+    col1img2: '',
+    col1img3: '',
+    col2img: '/projet2/projet2.png',
+    details: `NovaEntra — SaaS Financial Platform · React · NestJS · PostgreSQL · Docker · AI · Jenkins
+Plateforme SaaS multi-tenant de gestion financière adaptée à la fiscalité tunisienne. Couvre le cycle commercial complet : devis, facturation automatique, fournisseurs, stocks, trésorerie et espace client.
+
+AI & Automation : Analyse prédictive des flux de trésorerie via IA, catégorisation intelligente des transactions, détection automatique des anomalies comptables, génération automatique des factures récurrentes avec templates PDF dynamiques conformes (TVA, timbre fiscal).
+
+DevOps : Pipeline CI/CD complet avec Jenkins (build, test, lint, deploy), conteneurisation Docker, déploiement automatisé sur staging/production, tests unitaires et d'intégration, monitoring et alerting.
+
+Features : Architecture REST modulaire, RBAC multi-rôle, PDF conformes, facturation récurrente automatisée, notifications temps réel (WebSocket), tableau de bord analytique, export Excel/PDF.`,
   },
   {
     num: '03',
-    name: 'Solaris Digital',
-    category: 'Client',
-    col1img1:
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055759_963cfb0b-4bd1-4b0f-9d0a-09bd6cf95b2f.png&w=1280&q=85',
-    col1img2:
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_060108_438f781a-9846-4dcc-89ab-c4e6cb830f5b.png&w=1280&q=85',
-    col2img:
-      'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260412_055818_9d062121-ad7e-46b9-999a-1a6a692ef1ee.png&w=1280&q=85',
-    details: '',
+    name: 'CV Analyzer',
+    category: 'Personal',
+    col1img1: '/projet3/project3.1.png',
+    col1img2: '/projet3/project3.2.png',
+    col1img3: '',
+    col2img: '/projet3/projet3.png',
+    details: `Application web monopage 100% client-side d'analyse de CV assistée par IA (Gemini API). Permet d'importer un CV (PDF/texte), d'obtenir un score détaillé (0-100) avec forces/faiblesses et suggestions, d'améliorer le contenu, de télécharger la version optimisée en PDF professionnel et de trouver des offres d'emploi locales et internationales avec conseils visa. Architecture zéro backend, analyse entièrement en navigateur, API key en sessionStorage, design dark moderne avec particles animés et cartes glassmorphism.`,
+  },
+  {
+    num: '04',
+    name: 'StirForma',
+    category: 'Academic Project',
+    col1img1: '/projet 4/projet4.1.png',
+    col1img2: '/projet 4/projet4.2.png',
+    col1img3: '/projet 4/projet4.3.png',
+    col2img: '/projet 4/projet4.png',
+    details: `Developed a full-stack NestJS and React application for managing professional training programs, including session scheduling, user enrollment, and multi-role access control. Designed with a clean architecture separating a RESTful API backend from a modern component-based frontend.
+
+Built with: NestJS, TypeORM, PostgreSQL, React 19, TanStack Start, Tailwind CSS v4, shadcn/ui
+Features: JWT authentication (access + refresh tokens), role-based access (admin, formateur, participant, employe, cabinet), CRUD for formations/sessions/users, cabinet-scoped data isolation, seed scripts for demo data
+Testing: None configured yet
+DevOps: Docker-ready, frontend/backend each with independent .env configuration`,
   },
 ];
 
@@ -107,13 +127,17 @@ function ProjectCard({ project, index, total }: { project: Project; index: numbe
             </button>
           </div>
 
-          <img
-            src={project.col2img}
-            alt=""
-            loading="lazy"
-            className="w-full object-cover rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
-            style={{ height: 'clamp(320px, 50vh, 580px)' }}
-          />
+          <div
+            className="w-full overflow-hidden rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
+            style={{ height: 'clamp(380px, 55vh, 640px)' }}
+          >
+            <img
+              src={project.col2img}
+              alt=""
+              loading="lazy"
+              className="w-full h-full object-contain"
+            />
+          </div>
         </motion.div>
       </div>
 
@@ -129,6 +153,7 @@ function ProjectDetailOverlay({ project, onClose }: { project: Project; onClose:
     { src: project.col2img, title: 'Main' },
     ...(project.col1img1 ? [{ src: project.col1img1, title: 'Side 1' }] : []),
     ...(project.col1img2 ? [{ src: project.col1img2, title: 'Side 2' }] : []),
+    ...(project.col1img3 ? [{ src: project.col1img3, title: 'Side 3' }] : []),
   ];
   const [imgIndex, setImgIndex] = useState(0);
 
@@ -165,7 +190,7 @@ function ProjectDetailOverlay({ project, onClose }: { project: Project; onClose:
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.3 }}
-                className="w-full h-full object-contain"
+            className="w-full h-full object-contain rounded-[40px] sm:rounded-[50px] md:rounded-[60px]"
               />
             </AnimatePresence>
           </div>
@@ -204,7 +229,7 @@ function ProjectDetailOverlay({ project, onClose }: { project: Project; onClose:
 
 export function ProjectsSection() {
   return (
-    <section className="bg-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 z-10 relative px-5 sm:px-8 md:px-10 pb-20 sm:pb-24 md:pb-32">
+    <section id="projects" className="bg-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] -mt-10 sm:-mt-12 md:-mt-14 z-10 relative px-5 sm:px-8 md:px-10 pb-20 sm:pb-24 md:pb-32">
       <h2
         className="font-black uppercase text-center leading-none tracking-tight pt-20 sm:pt-24 md:pt-32 pb-40 sm:pb-48 md:pb-56 relative z-20 bg-[#0C0C0C]"
         style={{
