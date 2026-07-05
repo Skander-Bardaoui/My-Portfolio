@@ -28,13 +28,11 @@ export function HeroSection() {
         ))}
       </FadeIn>
 
-      <div className="flex-1 flex flex-col relative overflow-hidden">
-        <div className="overflow-hidden w-full mt-6 sm:mt-4 md:-mt-5">
-          <FadeIn delay={0.15} y={40}>
-            <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[10vw] sm:text-[11vw] md:text-[12vw] lg:text-[13vw]">
-              Hi,&nbsp;i&apos;m&nbsp;Skander
-            </h1>
-          </FadeIn>
+      <div className="flex-1 flex flex-col relative">
+        <div className="w-full mt-6 sm:mt-4 md:-mt-5">
+          <h1 className="hero-heading font-black uppercase tracking-tight leading-none w-full text-[10vw] sm:text-[11vw] md:text-[12vw] lg:text-[13vw] sm:whitespace-nowrap">
+            Hi, i&apos;m Skander
+          </h1>
         </div>
 
         <div className="sm:hidden flex-1 flex items-center justify-center">
